@@ -10,6 +10,10 @@ RSpec.describe StaticPagesController, type: :controller do
       get :home
       expect(response).to have_http_status(:success)
       assert_select "title", "#{base_title}"
+      assert_select "a[href=?]", root_path, count: 2
+      assert_select "a[href=?]", help_path
+      assert_select "a[href=?]", about_path
+      assert_select "a[href=?]", contact_path
     end
   end
 
