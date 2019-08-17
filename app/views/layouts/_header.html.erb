@@ -10,13 +10,13 @@
       <li class="nav-item"><%= link_to "Home",     root_path, class: 'nav-link' %></li>
       <li class="nav-item"><%= link_to "Help",     help_path, class: 'nav-link' %></li>
       <% if logged_in? %>
-        <li class="nav-item"><%= link_to "Users", '#', class: 'nav-link' %></li>
+        <li class="nav-item"><%= link_to "Users", users_path, class: 'nav-link' %></li>
         <li class="nav-item dropdown">
           <a id="navbarDropdownMenuLink" href="#"
              class="dropdown-toggle nav-link" role="button" data-toggle="dropdown">Acciont <b class="caret"></b></a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
             <%= link_to "Profile", current_user, class: 'dropdown-item' %>
-            <%= link_to "Settings", '#', class: 'dropdown-item' %>
+            <%= link_to "Settings", edit_user_path(current_user), class: 'dropdown-item' %>
             <div class="dropdown-divider"></div>
             <%= link_to "Log out", logout_path, method: :delete, class: 'dropdown-item' %>
           </div>
