@@ -25,6 +25,7 @@ RSpec.describe UsersController, type: :controller do
     let(:password_confirmation) { "hogehoge" }
 
     before do
+      ActionMailer::Base.deliveries.clear
       post :create, params: {
           user: {
               name: name,
@@ -35,10 +36,15 @@ RSpec.describe UsersController, type: :controller do
       }
     end
 
-    subject { response }
-
     context "with valid params" do
-      it { is_expected.to redirect_to(user_path(id: User.last.id)) }
+      describe "about response" do
+        subject { response }
+        it { is_expected.to redirect_to(root_path) }
+      end
+
+      describe "about activation mail" do
+
+      end
     end
 
     context "with invalid params" do
