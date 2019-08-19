@@ -10,6 +10,6 @@ if Rails.env.production?
     }
     config.fog_directory     = ENV['S3_BUCKET']
     config.fog_public        = true
-    config.asset_host        = "https://s3-#{ENV['AWS_REGION']}.amazonaws.com/"
+    config.asset_host        = "https://s3-#{ENV['AWS_REGION']}.amazonaws.com/#{ENV['S3_BUCKET']}"
   end
 end
