@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :users
   resources :account_activations, only: %i(edit)
   resources :password_resets,     only: %i(new create edit update)
+  resources :microposts,          only: %i(create destroy)
 
   root 'static_pages#home'
 end
