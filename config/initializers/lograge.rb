@@ -4,12 +4,13 @@ Rails.application.configure do
   config.lograge.enabled = true
 
   config.lograge.custom_options = lambda do |event|
-    { time: Time.now.to_i }
+    now = Time.zone.now
+    { unixtime: now.to_i, time: now.iso8601 }
   end
   config.lograge_sql.extract_event = Proc.new do |event|
-    { name: event.payload[:name], duration: event.duration.to_f.round(2), sql: event.payload[:sql] }
+    event.payload[:sql]
   end
   config.lograge_sql.formatter = Proc.new do |sql_queries|
-    sql_queries
+    "'#{sql_queries.join("\\n")}'"
   end
 end
