@@ -83,3 +83,14 @@ production環境では以下の環境変数でSendgridの接続情報を設定�
 Herokuを利用する場合、Sendgridプラグインの設定を行うことで、自動的に上記の環境変数が設定されます。
 
 config/environments/production.rbでこの環境変数を参照します。
+
+### NewRelic
+
+このアプリケーションのプロファイリングのために[NewRelic](https://newrelic.com/)を利用しています。
+production環境にて、以下の環境変数を設定する必要があります。
+
+| 環境変数             | 説明 |
+| -------------------- | ---- |
+| NEWRELIC_LICENSE_KEY | NewRelicのライセンスキー |
+
+config/newrelic.ymlでこの環境変数を参照します。
