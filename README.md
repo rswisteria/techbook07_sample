@@ -91,6 +91,6 @@ production環境にて、以下の環境変数を設定する必要がありま�
 
 | 環境変数             | 説明 |
 | -------------------- | ---- |
-| NEWRELIC_LICENSE_KEY | NewRelicのライセンスキー |
+| NEW_RELIC_LICENSE_KEY | NewRelicのライセンスキー |
 
 config/newrelic.ymlでこの環境変数を参照します。
