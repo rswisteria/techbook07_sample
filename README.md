@@ -93,4 +93,6 @@ production環境にて、以下の環境変数を設定する必要がありま�
 | -------------------- | ---- |
 | NEW_RELIC_LICENSE_KEY | NewRelicのライセンスキー |
 
+Herokuを利用する場合、NewRelicプラグインの設定を行うことで、自動的に上記の環境変数が設定されます。
+
 config/newrelic.ymlでこの環境変数を参照します。
