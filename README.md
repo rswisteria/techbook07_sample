@@ -83,3 +83,13 @@ production環境では以下の環境変数でSendgridの接続情報を設定�
 Herokuを利用する場合、Sendgridプラグインの設定を行うことで、自動的に上記の環境変数が設定されます。
 
 config/environments/production.rbでこの環境変数を参照します。
+
+### Bugsnag
+
+このアプリケーションは例外発生時等にBugsnagを利用してエラーの監視を行うことが出来ます。
+
+production環境では以下の環境変数でBugsnagのAPI Keyを設定します。
+
+| 環境変数          | 説明 |
+| ----------------- | ---- |
+| BUGSNAG_API_KEY   | Bugsnagで発行されたAPI Key | 
